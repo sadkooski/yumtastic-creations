@@ -11,6 +11,7 @@ import ingredients from "./server/routes/ingredientsRoutes.js";
 import newsletter from "./server/routes/subscribeRoutes.js";
 import favorites from "./server/routes/favoritesRoutes.js";
 import shoppingList from "./server/routes/shoppingListRoutes.js";
+import avatar from "./server/routes/avatarRoutes.js";
 
 const app = express();
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
@@ -27,6 +28,7 @@ app.use("/", newsletter);
 app.use("/", favorites);
 app.use("/", auth);
 app.use("/", recipes);
+app.use("/", avatar);
 app.use("/ingredients", ingredients);
 app.use("/shopping-list", shoppingList);
 app.use((req, res) => {
